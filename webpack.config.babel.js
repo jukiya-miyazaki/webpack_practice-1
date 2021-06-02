@@ -1,6 +1,7 @@
-import path from 'path';
+import path from 'path'; //path コアモジュール検索
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+//process.env 調べる
 const nodeEnv = process.env.NODE_ENV || 'development';
 const devMode = nodeEnv === 'development';
 
@@ -13,11 +14,11 @@ const dist = path.resolve(__dirname, './public');
 const config = {
   mode: nodeEnv,
   entry: {
-    app: `${src}/js/app.js`
+    app: `${src}/js/app.js`//変数展開
   },
   output: {
     filename: 'js/[name].bundle.js',
-    path: `${dist}/`,
+    path: `${dist}/`,//変数展開
   },
   module: {
     rules: [
